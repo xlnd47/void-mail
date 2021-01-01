@@ -43,7 +43,7 @@ These are all set as environment variables. They are loaded in [config.js](helpe
 
 Parameter | Type | Description
 ----------|------|-------------
-DOMAIN | String | The domain part after the @, where your receive emails. (e.g. `example.com`)
+DOMAINS | String | The domain part after the @, where your receive emails. (e.g. `example.com`), for multiple domains you just add a space between every domain. (e.g. `emample.com example.net`)
 IMAP_SERVER | String | The imap server address. (e.g. `imap.example.com`)
 IMAP_USER | String | The username used to sign into the imap server. 
 IMAP_PASSWORD | String | The password used to sign into the imap server.
@@ -66,17 +66,5 @@ Maybe Later:
 - reduce code base, if possible    
     http://ignorethecode.net/blog/2010/02/02/removing-features/
 
-## Team
-
-[![Aravindo Wingeier](https://github.com/synox.png?size=130)](https://github.com/synox) 
----
-[Aravindo Wingeier](https://github.com/synox) 
 
 
-## License
-
-GPL-3.0 © [Aravindo Wingeier](https://github.com/synox)
-
-[![BrowserStack](https://d2ogrdw2mh0rsl.cloudfront.net/production/images/static/header/header-logo.svg)](https://www.browserstack.com/)	
-
-Supported by [BrowserStack](https://www.browserstack.com/), which allows us to test projects online with any browser as a service. :-) 	

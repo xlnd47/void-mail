@@ -1,15 +1,15 @@
 {
   "name": "VOID disposable email",
   "description": "a simple and fast disposable mail service that works directly with your imap server. No database required.",
-  "repository": "https://github.com/synox/void-mail",
-  "logo": "https://github.com/synox/void-mail/raw/master/docs/void-text.gif",
+  "repository": "https://github.com/xlnd47/void-mail",
+  "logo": "https://github.com/xlnd47/void-mail/raw/master/docs/void-text.gif",
   "keywords": [
     "node",
     "disposable-mail"
   ],
   "env": {
-    "DOMAIN": {
-      "description": "Email domain."
+    "DOMAINS": {
+      "description": "Email domain. Add space between domains to add multiple domains."
     },
     "IMAP_SERVER": {
       "description": "Hostname of the server (usually imap.example.com)"
