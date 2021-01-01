@@ -9,9 +9,6 @@
 
 > a self-hosted, simple and fast disposable mail service that works directly with your imap server. No database required. 
 
-[![Build Status](https://travis-ci.org/synox/void-mail.svg?branch=master)](https://travis-ci.org/synox/void-mail)
-[![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/xojs/xo)
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fsynox%2Fvoid-mail.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fsynox%2Fvoid-mail?ref=badge_shield)
 
 # How it works
 You need a domain with [catch-all-mailbox](https://www.google.ch/search?q=how+to+setup+catch-all+imap+mailbox) and an imap account. 
@@ -32,7 +29,7 @@ See [FAQ](docs/faq.md)
 
 ## Install
 One click installation: 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/synox/void-mail)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/xlnd47/void-mail)
 
 
 See [Installation](docs/installation.md)
@@ -60,11 +57,9 @@ Testing:
 -   create unit/integration tests
 
 Maybe Later:
-- support multiple domains
+- ~~support multiple domains~~
 - support delete
 - ~~docker deployment~~
-- reduce code base, if possible    
-    http://ignorethecode.net/blog/2010/02/02/removing-features/
 
 
 
