@@ -1,11 +1,3 @@
-<div align="center">
-	<br>
-	<div>
-		<img src="docs/void-text.gif" width="200"/>
-	</div>
-	<p align="center">	disposable mailbox	</p>
-</div>
-
 
 > a self-hosted, simple and fast disposable mail service that works directly with your imap server. No database required. 
 
