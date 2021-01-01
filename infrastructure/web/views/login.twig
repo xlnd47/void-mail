@@ -17,7 +17,11 @@
             <input type="text" id="nameField" name="username" value="{{ username }}">
             <label for="commentField">Domain</label>
             <select id="commentField" name="domain">
+                {% for domain in domains %}
                 <option value="{{ domain }}">@{{ domain }}</option>
+                {% else %}
+                    No domains found.
+                {% endfor %}
             </select>
             <input class="button-primary" type="submit" value="Login">
         </fieldset>

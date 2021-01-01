@@ -1,8 +1,10 @@
 // Note: Also update app.json and README.md!
+require('dotenv').config();
 
 const config = {
 	email: {
-		domain: process.env.DOMAIN,
+		domains: process.env.DOMAINS.split(' '),
+		// domains: domains,
 		deleteMailsOlderThanDays: process.env.DELETE_MAILS_OLDER_THAN_DAYS || 30
 	},
 	imap: {
@@ -21,8 +23,8 @@ if (!config.imap.user || !config.imap.password || !config.imap.host) {
 	throw new Error('IMAP is not configured. Use IMAP_* ENV vars.')
 }
 
-if (!config.email.domain) {
-	throw new Error('DOMAIN is not configured. Use ENV vars.')
+if (!config.email.domains) {
+	throw new Error('DOMAINS are not configured. Use ENV vars.')
 }
 
 /**

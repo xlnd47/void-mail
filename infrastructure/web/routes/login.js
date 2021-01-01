@@ -9,30 +9,33 @@ router.get('/', (req, res, _next) => {
 	res.render('login', {
 		title: 'Login',
 		username: randomWord(),
-		domain: config.email.domain
+		domains: config.email.domains
 	})
 })
 
 router.get('/random', (req, res, _next) => {
-	res.redirect(`/${randomWord()}@${config.email.domain}`)
+	const randomDomain = config.email.domains[Math.floor(Math.random() * config.email.domains.length)];
+	res.redirect(`/${randomWord()}@${randomDomain}`)
 })
 
 router.post(
 	'/',
 	[
 		check('username').isLength({min: 1}),
-		check('domain').isIn([config.email.domain])
+		check('domain').isIn([config.email.domains])
+		
 	],
 	(req, res) => {
-		const errors = validationResult(req)
-		if (!errors.isEmpty()) {
-			return res.render('login', {
-				title: 'Login',
-				username: req.body.username,
-				domain: config.email.domain,
-				userInputError: true
-			})
-		}
+		// const errors = validationResult(req)
+		// console.log(errors.array);
+		// if (!errors.isEmpty()) {
+		// 	return res.render('login', {
+		// 		title: 'Login',
+		// 		username: req.body.username,
+		// 		domain: req.body.domain,
+		// 		userInputError: true
+		// 	})
+		// }
 
 		res.redirect(`/${req.body.username}@${req.body.domain}`)
 	}
