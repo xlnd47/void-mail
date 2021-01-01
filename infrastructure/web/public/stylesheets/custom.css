@@ -11,14 +11,24 @@ a {
     /*color: #00B7FF;*/
 }
 
+
 a.no-link-color {
     color: black;
 }
+
+
 
 .email:hover {
     color: black;
     background-color: #eeeeee;
 }
+
+
+
+blockquote{
+    color: grey;
+}
+
 
 
 iframe {
