@@ -8,7 +8,8 @@
     </script>
 
     <a style="float: right" class="button" href="/login">Logout</a>
-    <h1>{{ address }}</h1>
+    <h1 id="address">{{ address }}</h1>
+    <a class="button" id="copyButton">Copy</a>
     {% for mail in mailSummaries %}
         <a href="{{ mail.to[0] }}/{{ mail.uid }}" class="no-link-color">
             <blockquote class="email">
@@ -31,5 +32,20 @@
         </blockquote>
     {% endif %}
 
+{% raw %}
+<script>
+    var address = document.getElementById('address');
+
+    copyButton.onclick = function(){
+        const el = document.createElement('textarea');
+        el.value = address.innerHTML;
+        document.body.appendChild(el);
+        el.select();
+        document.execCommand('copy');
+        document.body.removeChild(el);
+        alert("Copied: " + address.innerHTML);
+    }
+</script>
+{% endraw %}
 
 {% endblock %}

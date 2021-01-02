@@ -282,7 +282,7 @@ class ImapService extends EventEmitter {
 			// Here we 'fail fast' instead of waiting for the connection.
 			throw new Error('imap connection not ready')
 		}
-
+		this.emit(ImapService.EVENT_DELETED_MAIL, uid)
 		return this.connection.deleteMessage(uid);
 	}
 
