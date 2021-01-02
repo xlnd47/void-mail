@@ -19,8 +19,8 @@ a.no-link-color {
 
 
 .email:hover {
-    color: black;
-    background-color: #eeeeee;
+    color: #FFFFFF;
+    background-color: #7289DA;
 }
 
 
@@ -52,4 +52,62 @@ text-muted {
 
 .footer {
     text-align: center
+}
+
+@media only screen and (min-width: 0px) {
+    /* For phones: */
+    h1{
+        
+    }
+
+}
+
+@media only screen and (min-width: 0px) {
+/* For desktop: */
+    h1 {
+        font-size: 2rem;
+        line-height: 1.2;
+    }
+    h6 {
+        font-size: 1.3rem;
+        letter-spacing: 0;
+        line-height: 1.4;
+    }
+    small {
+        color:#7289DA;
+    }
+    p{
+        font-size: 1.2rem;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    /* For tablets: */
+    h1 {
+        font-size: 3rem;
+        line-height: 1.2;
+    }
+    h6 {
+        font-size: 1.4rem;
+        letter-spacing: 0;
+        line-height: 1.4;
+    }
+    p{
+        font-size: 1.3rem;
+    }
+}
+@media only screen and (min-width: 768px) {
+/* For desktop: */
+    h1 {
+        font-size: 4.6rem;
+        line-height: 1.2;
+    }
+    h6 {
+        font-size: 1.6rem;
+        letter-spacing: 0;
+        line-height: 1.4;
+    }
+    p{
+        font-size: 1.5rem;
+    }
 }
