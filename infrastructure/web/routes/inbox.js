@@ -53,15 +53,11 @@ router.get(
 router.get('^/delete/:address/:uid([0-9]+$)', async (req, res, next) => {
 	try {
 		const mailProcessingService = req.app.get('mailProcessingService')
-		const mail = await mailProcessingService.deleteOneMail(
+		await mailProcessingService.deleteOneMail(
 			req.params.address,
 			req.params.uid
 		)
-		res.render('inbox', {
-			title: req.params.address,
-			address: req.params.address,
-			mailSummaries: mailProcessingService.getMailSummaries(req.params.address)
-		})
+		res.redirect(`/${req.params.address}`)
 	} catch (error) {
 		console.error('error while deleting one email', error)
 		next(error)

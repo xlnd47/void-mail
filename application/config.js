@@ -1,5 +1,5 @@
 // Note: Also update app.json and README.md!
-require('dotenv').config();
+require('dotenv').config()
 
 const config = {
 	email: {

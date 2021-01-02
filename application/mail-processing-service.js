@@ -36,7 +36,7 @@ class MailProcessingService extends EventEmitter {
 	}
 
 	deleteOneMail(address, uid) {
-		return this.imapService.delete(address, uid);
+		return this.imapService.delete(address, uid)
 	}
 
 	getAllMailSummaries() {
