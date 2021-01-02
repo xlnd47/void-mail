@@ -35,6 +35,10 @@ class MailProcessingService extends EventEmitter {
 		return this.cachedFetchFullMail(address, uid)
 	}
 
+	deleteOneMail(address, uid) {
+		return this.imapService.delete(address, uid);
+	}
+
 	getAllMailSummaries() {
 		return this.mailRepository.getAll()
 	}
@@ -65,6 +69,18 @@ class MailProcessingService extends EventEmitter {
 	}
 
 	async _deleteOldMails() {
+		try {
+			await this.imapService.deleteOldMails(
+				moment()
+					.subtract(this.config.email.deleteMailsOlderThanDays, 'days')
+					.toDate()
+			)
+		} catch (error) {
+			console.log('can not delete old messages', error)
+		}
+	}
+
+	async _deleteMail() {
 		try {
 			await this.imapService.deleteOldMails(
 				moment()

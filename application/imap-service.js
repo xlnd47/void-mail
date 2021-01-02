@@ -277,6 +277,15 @@ class ImapService extends EventEmitter {
 		return simpleParser(fullBody.body)
 	}
 
+	async delete(to, uid) {
+		if (!this.connection) {
+			// Here we 'fail fast' instead of waiting for the connection.
+			throw new Error('imap connection not ready')
+		}
+
+		return this.connection.deleteMessage(uid);
+	}
+
 	async _getAllUids() {
 		// We ignore mails that are flagged as DELETED, but have not been removed (expunged) yet.
 		const uids = await this._searchWithoutFetch([['!DELETED']])

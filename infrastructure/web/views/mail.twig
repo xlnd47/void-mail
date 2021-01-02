@@ -5,8 +5,9 @@
         enableNewMessageNotifications('{{ address }}', false)
     </script>
 
-    <a href="/{{ address }}">
-        ← Return to inbox</a>
+    <a href="/{{ address }}">← Return to inbox</a>
+    &nbsp;
+    <a class="button" href="/delete/{{to}}/{{uid}}">Delete mail</a>
     <a style="float: right" class="button" href="/login">Logout</a>
     <br>
     <h2>{{ mail.subject }}</h2>

@@ -34,6 +34,8 @@ router.get(
 				// Emails are immutable, cache if found
 				res.set('Cache-Control', 'private, max-age=600')
 				res.render('mail', {
+					to: mail.to.text.split(' ')[0],
+					uid: req.params.uid,
 					title: req.params.address,
 					address: req.params.address,
 					mail
@@ -47,5 +49,23 @@ router.get(
 		}
 	}
 )
+
+router.get('^/delete/:address/:uid([0-9]+$)', async (req, res, next) => {
+	try {
+		const mailProcessingService = req.app.get('mailProcessingService')
+		const mail = await mailProcessingService.deleteOneMail(
+			req.params.address,
+			req.params.uid
+		)
+		res.render('inbox', {
+			title: req.params.address,
+			address: req.params.address,
+			mailSummaries: mailProcessingService.getMailSummaries(req.params.address)
+		})
+	} catch (error) {
+		console.error('error while deleting one email', error)
+		next(error)
+	}
+})
 
 module.exports = router
