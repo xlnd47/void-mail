@@ -1,3 +1,4 @@
+forked from [synox/void-mail](https://github.com/synox/void-mail)
 
 > a self-hosted, simple and fast disposable mail service that works directly with your imap server. No database required. 
 
