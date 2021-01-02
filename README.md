@@ -50,9 +50,9 @@ Testing:
 -   create unit/integration tests
 
 Maybe Later:
-- ~~support multiple domains~~
-- support delete
-- ~~docker deployment~~
+- ~~support multiple domains~~ (done)
+- ~~support delete~~ (done)
+- ~~docker deployment~~ (done)
 
 
 
